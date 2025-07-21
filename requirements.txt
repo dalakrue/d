@@ -7,4 +7,4 @@ plotly
 XlsxWriter
 sqlalchemy
 matplotlib
-
+fpdf
