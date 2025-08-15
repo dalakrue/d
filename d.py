@@ -18,106 +18,6 @@ import tempfile
 import xlsxwriter
 from fpdf import FPDF
 from functools import lru_cache
-# Make full background white and fix text/input color
-st.markdown("""
-    <style>
-        /* Set full background to white */
-        .stApp {
-            background-color: white;
-        }
-
-        /* Force sidebar also white */
-        section[data-testid="stSidebar"] {
-            background-color: white !important;
-        }
-
-        /* Set inputs, text, button color */
-        .stTextInput>div>div>input,
-        .stTextArea>div>textarea,
-        .stNumberInput>div>div>input,
-        .stSelectbox>div>div>div>div,
-        .stButton>button {
-            background-color: white !important;
-            color: black !important;
-        }
-
-        /* Make labels black for better visibility */
-        label, .stTextInput label, .stNumberInput label, .stSelectbox label {
-            color: black !important;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-st.markdown(
-    """
-    <style>
-        /* Set background and text color */
-        body, .main, section[data-testid="stSidebar"] {
-            background-color: white !important;
-            color: black !important;
-        }
-
-        /* Ensure all text in sidebar is visible */
-        section[data-testid="stSidebar"] * {
-            color: black !important;
-        }
-
-        /* Button styling */
-        button {
-            color: black !important;
-            background-color: #f0f0f0 !important;
-            border-radius: 8px !important;
-            padding: 0.5rem 1rem !important;
-        }
-
-        /* Force default text color for Streamlit text blocks */
-        .css-1cpxqw2, .css-10trblm {
-            color: black !important;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    """
-    <style>
-        /* Main background and text */
-        body {
-            background-color: white;
-            color: black;
-        }
-
-        /* Streamlit main content background */
-        .main {
-            background-color: white;
-            color: black;
-        }
-
-        /* Sidebar */
-        section[data-testid="stSidebar"] {
-            background-color: white;
-            color: black;
-        }
-
-        /* Change default text color for all elements inside sidebar */
-        section[data-testid="stSidebar"] * {
-            color: black !important;
-        }
-
-        /* Adjust button text and background */
-        button {
-            color: black !important;
-        }
-
-        /* Ensure markdown text is visible */
-        .css-1cpxqw2, .css-10trblm {
-            color: black !important;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 CSV_TABLES = [
     "users", "orders", "order_details", "products", "payments",
@@ -714,3 +614,4 @@ with col2:
                 pdf_bytes,
                 file_name="summary_report.pdf",
                 mime="application/pdf" )
+
